@@ -1,5 +1,7 @@
 # Lock for Composer
 
+[![Build Status](https://github.com/ghostwriter/composer-lock/actions/workflows/Continuous%20Integration/badge.svg)](https://github.com/ghostwriter/composer-lock/actions?query=workflow%3A"Continuous+Integration")
+
 Install
 ---
 
