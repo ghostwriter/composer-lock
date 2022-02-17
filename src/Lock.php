@@ -17,7 +17,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 
-use function array_merge;
 use function implode;
 use function sprintf;
 use function substr;
@@ -65,7 +64,7 @@ final class Lock implements PluginInterface, Capable, CommandProvider
 
     public function __construct()
     {
-        $this->lockCommand = new class () extends BaseCommand
+        $this->lockCommand = new class extends BaseCommand
         {
             public function __construct()
             {
@@ -163,11 +162,12 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                         'Updating composer dependencies.',
                         'Failed to update composer dependencies',
                         new ArrayInput([
-                            '--no-scripts'          => true,
-                            '--no-plugins'          => true,
-                            '--no-progress'         => true,
-                            '--ignore-platform-req' => ['php'],
-                            '--quiet'               => true,
+                            '--no-autoloader' => true,
+                            '--no-cache'      => true,
+                            '--no-scripts'    => true,
+                            '--no-plugins'    => true,
+                            '--no-progress'   => true,
+                            '--quiet'         => true,
                         ]),
                         $output,
                         $dryRun
@@ -178,7 +178,7 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                         'Failed to remove "config.platform.php" in composer.json',
                         new ArrayInput([
                             '--unset'     => true,
-                            'setting-key' => 'platform',
+                            'setting-key' => 'platform.php',
                         ]),
                         $output,
                         $dryRun,
@@ -189,9 +189,13 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                         'Updating composer.lock',
                         'Failed to update composer.lock',
                         new ArrayInput([
-                            '--dry-run'    => true,
-                            '--lock'       => true,
-                            '--no-install' => true,
+                            '--no-cache'    => true,
+                            '--no-scripts'  => true,
+                            '--no-plugins'  => true,
+                            '--no-progress' => true,
+                            '--quiet'       => true,
+                            '--no-install'  => true,
+                            '--lock'        => true,
                         ]),
                         $output,
                         $dryRun
@@ -224,6 +228,7 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                 }
 
                 try {
+                    $this->getApplication()->resetComposer();
                     $this->getApplication()->find('config')->run($input, $output);
                 } catch (Throwable $throwable) {
                     $this->error($error . ', ' . $throwable->getMessage());
@@ -246,21 +251,8 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                         return;
                     }
 
-                    $this->getApplication()->find('update')->run(
-                        new ArrayInput(
-                            array_merge(
-                                [
-                                    '--ignore-platform-req' => ['php'],
-                                    '--no-progress'         => true,
-                                    '--no-scripts'          => true,
-                                    '--no-plugins'          => true,
-                                    '--quiet'               => true,
-                                ],
-                                $input->getOptions()
-                            )
-                        ),
-                        $output
-                    );
+                    $this->getApplication()->resetComposer();
+                    $this->getApplication()->find('update')->run($input, $output);
                 } catch (Throwable $throwable) {
                     $this->error($error . ', ' . $throwable->getMessage());
 
