@@ -1,6 +1,6 @@
 {
     "name": "ghostwriter/composer-lock",
-    "description": "Manage composer.lock file.",
+    "description": "Manage composer.lock files",
     "license": "BSD-3-Clause",
     "type": "composer-plugin",
     "keywords": [
