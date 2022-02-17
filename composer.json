@@ -1,0 +1,88 @@
+{
+    "name": "ghostwriter/composer-lock",
+    "description": "Manage composer.lock file.",
+    "license": "BSD-3-Clause",
+    "type": "composer-plugin",
+    "keywords": [
+        "ghostwriter",
+        "composer",
+        "lock",
+        "composer-plugin"
+    ],
+    "authors": [
+        {
+            "name": "Nathanael Esayeas",
+            "email": "nathanael.esayeas@protonmail.com"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/ghostwriter/composer-lock/contributors"
+        }
+    ],
+    "homepage": "https://github.com/ghostwriter/composer-lock",
+    "require": {
+        "php": ">=7.4,<8.2",
+        "ext-json": "*",
+        "composer-plugin-api": ">=2.0,<2.3",
+        "composer-runtime-api": ">=2.0,<2.3"
+    },
+    "require-dev": {
+        "composer/composer": ">=2.0,<2.3",
+        "laminas/laminas-coding-standard": "^2.3",
+        "phpunit/phpunit": "^9.5",
+        "psalm/plugin-phpunit": "^0.16",
+        "vimeo/psalm": "^4.20"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Ghostwriter\\ComposerLock\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ghostwriter\\ComposerLock\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true
+        },
+        "composer-lock": {
+            "directory": "./",
+            "enable": true,
+            "format": "composer_%s.lock",
+            "php": [
+                "7.4",
+                "7.4.24",
+                "8.0",
+                "8.0.11",
+                "8.1"
+            ]
+        },
+        "optimize-autoloader": true,
+        "platform": {},
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "class": "Ghostwriter\\ComposerLock\\Lock",
+        "plugin-modifies-downloads": true
+    },
+    "scripts": {
+        "check": [
+            "@cs-fix",
+            "@cs-check",
+            "@test",
+            "@psalm"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "psalm": "psalm",
+        "psalm-fix-all": "psalm --alter --issues=all",
+        "test": "phpunit --color --testdox --stop-on-failure",
+        "test-coverage": "phpunit --color --coverage-clover clover.xml"
+    }
+}
