@@ -63,7 +63,6 @@
             ]
         },
         "optimize-autoloader": true,
-        "platform": {},
         "preferred-install": "dist",
         "sort-packages": true
     },
