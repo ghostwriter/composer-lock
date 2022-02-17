@@ -1,0 +1,16 @@
+{
+    "name": "ghostwriter/composer-lock-test",
+    "description": "Used for testing ghostwriter/composer-lock",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0,<8.2",
+        "ghostwriter/composer-lock": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "ghostwriter/composer-lock": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
