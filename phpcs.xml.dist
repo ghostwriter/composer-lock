@@ -10,6 +10,10 @@
     <!-- Show progress -->
     <arg value="p"/>
 
+    <exclude-pattern>*/.github/*</exclude-pattern>
+    <exclude-pattern>*/tests/fixtures/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
     <!-- Paths to check -->
     <file>src</file>
     <file>tests</file>
