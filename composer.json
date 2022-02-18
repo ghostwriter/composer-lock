@@ -70,21 +70,13 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "infection/extension-installer": true
         },
-        "composer-lock": {
-            "directory": "./",
-            "enable": true,
-            "format": "composer_%s.lock",
-            "php": [
-                "7.4",
-                "7.4.24",
-                "8.0",
-                "8.0.11",
-                "8.1"
-            ]
-        },
+        "classmap-authoritative": true,
+        "discard-changes": true,
         "optimize-autoloader": true,
         "platform": {},
         "preferred-install": "dist",
+        "prepend-autoloader": true,
+        "process-timeout": 5000,
         "sort-packages": true
     },
     "extra": {
@@ -100,7 +92,7 @@
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "psalm": "psalm",
+        "psalm": "psalm --stats --taint-analysis --no-cache --find-dead-code --find-unused-code --find-unused-psalm-suppress --update-baseline",
         "psalm-fix-all": "psalm --alter --issues=all",
         "test": "phpunit --color --testdox --stop-on-failure",
         "test-coverage": "phpunit --color --coverage-clover clover.xml"
