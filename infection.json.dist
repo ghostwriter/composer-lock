@@ -4,7 +4,11 @@
         "directories": [
             "src"
         ],
-        "excludes": []
+        "excludes": [
+            ".github",
+            "tests",
+            "vendor"
+        ]
     },
     "mutators": {
         "@default": true
