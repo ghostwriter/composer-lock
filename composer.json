@@ -12,14 +12,30 @@
     "authors": [
         {
             "name": "Nathanael Esayeas",
-            "email": "nathanael.esayeas@protonmail.com"
+            "email": "nathanael.esayeas@protonmail.com",
+            "homepage": "https://github.com/sponsors/ghostwriter",
+            "role": "Developer"
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/ghostwriter/composer-lock/contributors"
+            "homepage": "https://github.com/ghostwriter/wip/contributors",
+            "role": "Contributor"
         }
     ],
     "homepage": "https://github.com/ghostwriter/composer-lock",
+    "support": {
+        "issues": "https://github.com/ghostwriter/composer-lock/issues",
+        "forum": "https://github.com/ghostwriter/composer-lock/discussions",
+        "source": "https://github.com/ghostwriter/composer-lock",
+        "docs": "https://github.com/ghostwriter/composer-lock",
+        "rss": "https://github.com/ghostwriter/composer-lock/releases.atom"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ghostwriter"
+        }
+    ],
     "require": {
         "php": ">=7.4,<8.2",
         "ext-json": "*",
@@ -28,9 +44,12 @@
     },
     "require-dev": {
         "composer/composer": ">=2.0,<2.3",
+        "infection/infection": "^0.26",
         "laminas/laminas-coding-standard": "^2.3",
+        "phpbench/phpbench": "^1.2",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-phpunit": "^0.16",
+        "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^4.20"
     },
     "minimum-stability": "dev",
@@ -42,7 +61,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ghostwriter\\ComposerLock\\Tests\\": "tests/"
+            "Ghostwriter\\ComposerLock\\Tests\\": "tests/",
+            "Ghostwriter\\ComposerLock\\Tests\\Benchmark\\": "tests/Benchmark/"
         }
     },
     "config": {
