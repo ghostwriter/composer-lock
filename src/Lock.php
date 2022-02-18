@@ -6,6 +6,7 @@ namespace Ghostwriter\ComposerLock;
 
 use Composer\Command\BaseCommand;
 use Composer\Composer;
+use Composer\Console\Application;
 use Composer\InstalledVersions;
 use Composer\IO\IOInterface;
 use Composer\Plugin\Capability\CommandProvider;
@@ -228,8 +229,14 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                 }
 
                 try {
-                    $this->getApplication()->resetComposer();
-                    $this->getApplication()->find('config')->run($input, $output);
+                    (function (
+                        Application $application,
+                        InputInterface $input,
+                        OutputInterface $output
+                    ): void {
+                        $application->resetComposer();
+                        $application->find('config')->run($input, $output);
+                    })($this->getApplication(), $input, $output);
                 } catch (Throwable $throwable) {
                     $this->error($error . ', ' . $throwable->getMessage());
 
@@ -251,8 +258,14 @@ final class Lock implements PluginInterface, Capable, CommandProvider
                         return;
                     }
 
-                    $this->getApplication()->resetComposer();
-                    $this->getApplication()->find('update')->run($input, $output);
+                    (function (
+                        Application $application,
+                        InputInterface $input,
+                        OutputInterface $output
+                    ): void {
+                        $application->resetComposer();
+                        $application->find('update')->run($input, $output);
+                    })($this->getApplication(), $input, $output);
                 } catch (Throwable $throwable) {
                     $this->error($error . ', ' . $throwable->getMessage());
 
@@ -270,7 +283,9 @@ final class Lock implements PluginInterface, Capable, CommandProvider
     {
     }
 
-    /** @return array<class-string<CommandProvider>, class-string<self>> */
+    /**
+     * @return array{CommandProvider::class: self::class}
+     */
     public function getCapabilities(): array
     {
         return [CommandProvider::class => self::class];
