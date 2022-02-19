@@ -65,7 +65,7 @@ final class LockTest extends TestCase
 
     /**
      * @dataProvider supportedCommandsProvider
-     * @param array<"--dry-run"|"--php"|"--working-dir"|"-p"|"command", bool|string> $input
+     * @param array<"--dry-run"|"--php"|"-d"|"-p"|"command", bool|string> $input
      * @param array<"capture_stderr_separately"|"verbosity", bool> $options
      */
     public function testCommandOptionsProvider(
