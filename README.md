@@ -1,11 +1,11 @@
 # Lock for Composer
 
 [![Continuous Integration](https://github.com/ghostwriter/composer-lock/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/ghostwriter/composer-lock/actions/workflows/continuous-integration.yml)
+[![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/composer-lock?color=8892bf)](https://www.php.net/supported-versions)
 [![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/composer-lock?cache=300)](https://packagist.org/packages/ghostwriter/composer-lock)
 [![Downloads](https://badgen.net/packagist/dt/ghostwriter/composer-lock?cache=300&color=blue)](https://packagist.org/packages/ghostwriter/composer-lock)
-[![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/composer-lock?color=8892bf)](https://www.php.net/supported-versions)
 [![Type Coverage](https://shepherd.dev/github/ghostwriter/composer-lock/coverage.svg)](https://shepherd.dev/github/ghostwriter/composer-lock)
-[![License](https://badgen.net/packagist/license/ghostwriter/composer-lock?icon=github)](./LICENSE)
+[![License](https://badgen.net/packagist/license/ghostwriter/composer-lock)](./LICENSE)
 
 Bumps `./composer.lock` file, optionally lock the minimum supported PHP version.
 
@@ -37,13 +37,11 @@ composer lock -p 8.0.999 --dry-run
 
 ``` bash
 composer test
-
-composer check
 ```
 
 ### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG.md](CHANGELOG.md) for more information what has changed recently.
 
 ### Security
 
@@ -51,10 +49,10 @@ If you discover any security related issues, please email `nathanael.esayeas@pro
 
 ## Credits
 
-- [Seldaek for Composer](https://github.com/composer/composer)
+- [Composer](https://github.com/composer/composer)
 - [Nathanael Esayeas](https://github.com/ghostwriter)
 - [All Contributors](../../contributors)
 
 ## License
 
-The BSD-3-Clause. Please see [License File](LICENSE.md) for more information.
+The BSD-3-Clause. Please see [License File](./LICENSE) for more information.
