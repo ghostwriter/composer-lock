@@ -1,0 +1,13 @@
+{
+    "exclude": [
+        {
+            "name": "PHPUnit on PHP 7.4 with lowest dependencies"
+        },
+        {
+            "name": "PHPUnit on PHP 8.0 with lowest dependencies"
+        },
+        {
+            "name": "PHPUnit on PHP 8.1 with lowest dependencies"
+        }
+    ]
+}
