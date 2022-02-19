@@ -88,7 +88,7 @@ final class LockTest extends TestCase
      * @return Generator<string, array{0: array<"--dry-run"|"--php"|"-d"|"-p"|"command", bool|string>, 1: array{capture_stderr_separately: true, verbosity: true}, 2: '', 3: '', 4: 0}, mixed, void>
      * phpcs:enable
      */
-    protected function supportedCommandsProvider(): Generator
+    public function supportedCommandsProvider(): Generator
     {
         foreach ($this->phpCommandOptions() as $phpCommandOption) {
             foreach ($this->supportedPhpVersions() as $phpVersion) {
