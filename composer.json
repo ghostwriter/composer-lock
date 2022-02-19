@@ -1,6 +1,6 @@
 {
     "name": "ghostwriter/composer-lock",
-    "description": "Manage composer.lock files",
+    "description": "Bumps `./composer.lock` file, optionally lock the minimum supported PHP version",
     "license": "BSD-3-Clause",
     "type": "composer-plugin",
     "keywords": [
@@ -73,7 +73,6 @@
         "classmap-authoritative": true,
         "discard-changes": true,
         "optimize-autoloader": true,
-        "platform": {},
         "preferred-install": "dist",
         "prepend-autoloader": true,
         "process-timeout": 5000,
