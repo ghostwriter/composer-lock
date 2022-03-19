@@ -43,14 +43,14 @@
         "composer-runtime-api": ">=2.0,<2.3"
     },
     "require-dev": {
-        "composer/composer": ">=2.0,<2.3",
-        "infection/infection": "^0.26",
-        "laminas/laminas-coding-standard": "^2.3",
-        "phpbench/phpbench": "^1.2",
-        "phpunit/phpunit": "^9.5",
-        "psalm/plugin-phpunit": "^0.16",
+        "composer/composer": ">=2.0,<2.4",
+        "infection/infection": "^0.26.6",
+        "laminas/laminas-coding-standard": "^2.3.0",
+        "phpbench/phpbench": "^1.2.5",
+        "phpunit/phpunit": "^9.5.19",
+        "psalm/plugin-phpunit": "^0.16.1",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^4.20"
+        "vimeo/psalm": "^4.22.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
