@@ -15,11 +15,6 @@
             "email": "nathanael.esayeas@protonmail.com",
             "homepage": "https://github.com/sponsors/ghostwriter",
             "role": "Developer"
-        },
-        {
-            "name": "Contributors",
-            "homepage": "https://github.com/ghostwriter/wip/contributors",
-            "role": "Contributor"
         }
     ],
     "homepage": "https://github.com/ghostwriter/composer-lock",
@@ -39,15 +34,15 @@
     "require": {
         "php": "~7.4.0 || ~8.0.0 || ~8.1.0",
         "ext-json": "*",
-        "composer-plugin-api": ">=2.0,<2.3",
-        "composer-runtime-api": ">=2.0,<2.3"
+        "composer-plugin-api": ">=2.0,<2.4",
+        "composer-runtime-api": ">=2.0,<2.4"
     },
     "require-dev": {
         "composer/composer": ">=2.0,<2.4",
         "infection/infection": "^0.26.6",
         "laminas/laminas-coding-standard": "^2.3.0",
         "phpbench/phpbench": "^1.2.5",
-        "phpunit/phpunit": "^9.5.19",
+        "phpunit/phpunit": "^9.5.20",
         "psalm/plugin-phpunit": "^0.16.1",
         "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^4.22.0"
@@ -76,7 +71,10 @@
         "preferred-install": "dist",
         "prepend-autoloader": true,
         "process-timeout": 5000,
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.999"
+        }
     },
     "extra": {
         "class": "Ghostwriter\\ComposerLock\\Lock",
