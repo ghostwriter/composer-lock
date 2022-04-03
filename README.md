@@ -3,7 +3,7 @@
 [![Continuous Integration](https://github.com/ghostwriter/composer-lock/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/ghostwriter/composer-lock/actions/workflows/continuous-integration.yml)
 [![Supported PHP Version](https://badgen.net/packagist/php/ghostwriter/composer-lock?color=8892bf)](https://www.php.net/supported-versions)
 [![Type Coverage](https://shepherd.dev/github/ghostwriter/composer-lock/coverage.svg)](https://shepherd.dev/github/ghostwriter/composer-lock)
-[![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/composer-lock?cache=300)](https://packagist.org/packages/ghostwriter/composer-lock)
+[![Latest Version on Packagist](https://badgen.net/packagist/v/ghostwriter/composer-lock)](https://packagist.org/packages/ghostwriter/composer-lock)
 [![Downloads](https://badgen.net/packagist/dt/ghostwriter/composer-lock?cache=300&color=blue)](https://packagist.org/packages/ghostwriter/composer-lock)
 
 Bumps `./composer.lock` file, optionally lock the minimum supported PHP version.
