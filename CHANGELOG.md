@@ -21,7 +21,6 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ## 0.2.2 - 2022-08-12
 
-
 -----
 
 ### Release Notes for [0.2.2](https://github.com/ghostwriter/composer-lock/milestone/10)
