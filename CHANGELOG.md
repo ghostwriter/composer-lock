@@ -2,22 +2,27 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 0.3.1 - 2022-08-13
+## 0.4.0 - TBD
 
+### Added
 
------
+- Nothing.
 
-### Release Notes for [0.3.1](https://github.com/ghostwriter/composer-lock/milestone/14)
+### Changed
 
-0.3.x bugfix release (patch)
+- Nothing.
 
-### 0.3.1
+### Deprecated
 
-- Total issues resolved: **0**
-- Total pull requests resolved: **1**
-- Total contributors: **1**
+- Nothing.
 
- - [20: Up](https://github.com/ghostwriter/composer-lock/pull/20) thanks to @ghostwriter
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
 
 ## 0.2.3 - 2022-08-12
 
